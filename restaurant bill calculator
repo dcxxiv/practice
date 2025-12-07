@@ -1,21 +1,23 @@
 #include <iostream>
 #include <iomanip>
 
+using namespace std;
+
 int main() {
     int N;
-    std::cout << "Enter the number of tables (N): ";
-    std::cin >> N;
+    cout << "Enter the number of tables (N): ";
+    cin >> N;
 
-    // Variables for calculations
+    // Constants for calculations
     const double SERVICE_CHARGE_RATE = 0.07;
     const double TAX_RATE = 0.09;
 
-    std::cout << std::fixed << std::setprecision(2);
+    cout << fixed << setprecision(2);
 
     for (int i = 1; i <= N; ++i) {
         double subtotal;
-        std::cout << "Enter subtotal for table " << i << ": ";
-        std::cin >> subtotal;
+        cout << "Enter subtotal for table " << i << ": ";
+        cin >> subtotal;
 
         // Calculate service charge and tax
         double service_charge = subtotal * SERVICE_CHARGE_RATE;
@@ -24,14 +26,15 @@ int main() {
         // Calculate final amount
         double final_amount = subtotal + service_charge + tax;
 
-        std::cout << "Table " << i << " Final Bill: " << final_amount;
+        cout << "Table " << i << " Final Bill: " << final_amount;
 
         // Check for 'LARGE' bill condition
         if (final_amount >= 1500.0) {
-            std::cout << " ('LARGE')";
+            cout << " ('LARGE')";
         }
-        std::cout << "\n";
+        cout << "\n";
     }
 
     return 0;
 }
+
