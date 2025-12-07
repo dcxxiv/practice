@@ -1,0 +1,32 @@
+#include <iostream>
+#include <iomanip>
+
+int main() {
+    int N;
+    std::cout << "Enter the number of prescriptions (N): ";
+    std::cin >> N;
+
+    double total_cost = 0.0;
+    std::cout << std::fixed << std::setprecision(2);
+
+    for (int i = 1; i <= N; ++i) {
+        double cost;
+        std::cout << "Enter cost for prescription " << i << ": ";
+        std::cin >> cost;
+
+        std::cout << "Prescription " << i << " Cost: " << cost;
+
+        // Check for 'Low Cost Prescription' condition
+        if (cost < 600.0) {
+            std::cout << " (Low Cost Prescription)";
+        }
+        std::cout << "\n";
+
+        total_cost += cost;
+    }
+
+    std::cout << "\n--- Summary ---\n";
+    std::cout << "Total Cost for all prescriptions: " << total_cost << "\n";
+
+    return 0;
+}
